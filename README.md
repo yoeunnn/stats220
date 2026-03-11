@@ -17,10 +17,10 @@ This is my repo for STATS 220.
 
    *The url of STATS302: https://study.auckland.ac.nz/ords/r/uoa/catalogue/course?p6_code=STATS%20302&clear=6*
 
-*A meme that captures how I currently feel about my university studies is* 
+*A meme that captures how I currently feel about my university studies is :* 
 
 ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
-*But after this semester, I will definitely be* 
+*But after this semester, I will definitely be :* 
 
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl2amhjeWNtcm9tdGk3dXJmdjIxZHl5NDlmbnl4Zm14Y3RhMXVleiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iJgoGwkqb1mmH1mES3/giphy.gif)
