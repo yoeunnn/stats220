@@ -1,0 +1,48 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+```
+
+## Olive Young Global Best Sellers Analysis
+
+This report analyzes the top best-selling products on Olive Young Global to understand current market trends and consumer preferences.
+
+```{r}
+library(tidyverse)
+url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTXYg7KHPE5DqU_8ws0ioXqbolXSMfioUprQZyJx-2TxTA3j3EVcGZoet1LubnXKs3xOvay_7aUzlcn/pub?gid=1159843239&single=true&output=csv"
+
+logged_data <- read_csv(url)
+latest_data <- logged_data %>%
+  rename(category = 3, price_usd = 4, promotion = 5)
+
+# Calculate the minimum and maximum prices to understand the price range of best sellers.
+# Summary value 1 : Minimum price 
+min_price <- min(latest_data$price_usd, na.rm = TRUE)
+# Summary value 2 : Maximum price 
+max_price <- max(latest_data$price_usd, na.rm = TRUE)
+
+# Bar chart 1 : Distribution of Product Categories
+# This bar chart identifies which product categories are most dominant in the Best Sellers list.
+latest_data %>%
+  ggplot() +
+    geom_bar(aes(x = category, fill = category)) +
+  labs(title = paste("Category Distribution Among Top", nrow(latest_data), "Best Sellers"), subtitle = "Which category claims the most spots in the real-time ranking?", caption = "Source: OliveYoungGlobal", x = "Category")
+# Bar chart 2 : Distribution of whether there is a promotion
+# This chart explores the prevalence of promotions and shows the category mix within each type.
+latest_data %>%
+  ggplot() +
+    geom_bar(aes(x = promotion, fill = category)) +
+  labs(title = paste("Distribution of Promotions Among Top", nrow(latest_data), "Best Sellers"), subtitle = "Is it common to sell products with any promotions?", caption = "Source: OliveYoungGlobal", x = "Promotions")
+
+```
+
+The price of best-selling products ranges from a minimum of $`r min_price` to a maximum of $`r max_price`.
